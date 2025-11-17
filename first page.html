@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Go on a Date with Me?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://drive.google.com/uc?export=download&id=1RAp8S-mFEMSJWWLvZg69Ihi1KE2NDboT');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #f0f0f0; /* Fallback if image fails */
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin: 0;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+        }
+        .buttons {
+            display: flex;
+            gap: 20px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #yes:hover {
+            background-color: #45a049;
+        }
+        #no {
+            background-color: #f44336;
+            color: white;
+            position: relative;
+        }
+        #no:hover {
+            background-color: #da190b;
+        }
+    </style>
+</head>
+<body>
+    <h1>CAN WE GO ON A DATEEEE?</h1>
+    <p>Hey Suhalyy, I know I am a weirdo butttt, will u go out with me for the best date of your life?
+    <div class="buttons">
+        <button id="yes">YES</button>
+        <button id="no">NO</button>
+    </div>
+
+    <script>
+        const noButton = document.getElementById('no');
+        const yesButton = document.getElementById('yes');
+
+        // Function to move the NO button randomly on hover or click
+        function moveNoButton() {
+            const maxX = window.innerWidth - noButton.offsetWidth;
+            const maxY = window.innerHeight - noButton.offsetHeight;
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+            noButton.style.position = 'absolute';
+            noButton.style.left = randomX + 'px';
+            noButton.style.top = randomY + 'px';
+        }
+
+        // Move on hover
+        noButton.addEventListener('mouseover', moveNoButton);
+
+        // Move on click (extra fun)
+        noButton.addEventListener('click', moveNoButton);
+
+        // YES button redirects to confirmation page
+        yesButton.addEventListener('click', function() {
+            window.location.href = 'confirmation.html';
+        });
+    </script>
+</body>
+</html>
